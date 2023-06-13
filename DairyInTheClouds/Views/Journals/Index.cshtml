@@ -1,0 +1,10 @@
+﻿<!-- Journals/Index.cshtml -->
+@model List<Journal>
+
+<h2>Journals</h2>
+
+@foreach (var journal in Model)
+{
+    <h4>@journal.Title</h4>
+    <p>@journal.Description</p>
+}

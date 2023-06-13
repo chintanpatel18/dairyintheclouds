@@ -1,0 +1,9 @@
+﻿@model List<Task>
+
+<h2>Tasks</h2>
+
+@foreach (var task in Model)
+{
+    <h4>@task.Title</h4>
+    <p>@task.Description</p>
+}
