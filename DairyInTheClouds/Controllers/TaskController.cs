@@ -1,6 +1,8 @@
-﻿// TasksController.cs
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using DairyInTheClouds.Models;
+using System.Threading.Tasks;
 
 public class TasksController : Controller
 {
@@ -11,7 +13,7 @@ public class TasksController : Controller
         _context = context;
     }
 
-    // GET: Tasks
+    [Authorize]
     public async Task<IActionResult> Index()
     {
         var tasks = await _context.Tasks.ToListAsync();
