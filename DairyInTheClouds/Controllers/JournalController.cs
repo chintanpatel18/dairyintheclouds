@@ -1,6 +1,8 @@
-﻿// JournalsController.cs
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using DairyInTheClouds.Models;
+using System.Threading.Tasks;
 
 public class JournalsController : Controller
 {
@@ -11,7 +13,7 @@ public class JournalsController : Controller
         _context = context;
     }
 
-    // GET: Journals
+    [Authorize]
     public async Task<IActionResult> Index()
     {
         var journals = await _context.Journals.ToListAsync();
