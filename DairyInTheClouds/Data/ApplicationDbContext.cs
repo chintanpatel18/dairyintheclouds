@@ -2,7 +2,7 @@
 using DairyInTheClouds.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Task = DairyInTheClouds.Models.Task;
+
 
 public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
 {
@@ -12,7 +12,7 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     }
 
     public DbSet<Journal> Journals { get; set; }
-    public DbSet<Task> Tasks { get; set; }
+    public DbSet<System.Threading.Tasks.Task> Tasks { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
